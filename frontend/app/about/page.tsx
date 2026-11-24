@@ -20,7 +20,6 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { ModelArchitecture } from "@/components/model-architecture";
-import { ModelMetrics } from "@/components/model-metrics";
 import { DatasetInfo } from "@/components/dataset-info";
 
 export default function AboutPage() {
@@ -464,8 +463,6 @@ export default function AboutPage() {
 
                   <div className="space-y-4">
                     <h3 className="text-lg font-semibold">Training Details</h3>
-                    <ModelMetrics />
-
                     <div className="mt-6 p-4 bg-indigo-50 dark:bg-indigo-900/20 rounded-lg">
                       <h4 className="font-medium flex items-center gap-2 text-indigo-700 dark:text-indigo-400">
                         <GraduationCap className="h-4 w-4" />
