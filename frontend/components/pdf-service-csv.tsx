@@ -825,7 +825,7 @@ export const emailPDFCsv = async (
       const reader = new FileReader();
       reader.onload = () => {
         const result = reader.result as string;
-        const base64 = result.split(",")[1]; // ✅ extract actual base64
+        const base64 = result.split(",")[1]; // extract actual base64
         resolve(base64);
       };
       reader.onerror = reject;

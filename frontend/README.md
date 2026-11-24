@@ -127,4 +127,4 @@ For any questions or feedback, please contact [your-email@example.com](mailto:yo
 
 ---
 
-Built with ❤️ for better healthcare outcomes
+Built for better healthcare outcomes
