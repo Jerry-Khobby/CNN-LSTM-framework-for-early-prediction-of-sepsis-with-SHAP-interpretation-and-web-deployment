@@ -118,7 +118,7 @@ export function DatasetInfo() {
     ctx.font = "bold 14px Arial"
     ctx.textAlign = "center"
     ctx.textBaseline = "top"
-    ctx.fillText("Dataset Split", width / 2, 10)
+    ctx.fillText("Dataset Split (Notebook Pipeline)", width / 2, 10)
 
     // Draw demographic information
     const demoX = 20
@@ -129,9 +129,9 @@ export function DatasetInfo() {
     ctx.fillText("Demographics:", demoX, demoY)
 
     ctx.font = "12px Arial"
-    ctx.fillText("Age: 18-89 years (mean 61.2)", demoX, demoY + 20)
-    ctx.fillText("Gender: 54% male, 46% female", demoX, demoY + 40)
-    ctx.fillText("Hospital settings: ICU, ED, General wards", demoX, demoY + 60)
+    ctx.fillText("Age: 14-100 years (mean 61.6)", demoX, demoY + 20)
+    ctx.fillText("Gender: 56% male, 44% female", demoX, demoY + 40)
+    ctx.fillText("Setting: ICU, two hospital systems", demoX, demoY + 60)
 
     return () => {
       window.removeEventListener("resize", setCanvasDimensions)

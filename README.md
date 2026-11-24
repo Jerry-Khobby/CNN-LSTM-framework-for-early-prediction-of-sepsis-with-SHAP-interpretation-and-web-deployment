@@ -304,8 +304,8 @@ The frontend runs at `http://localhost:3000` and expects the API at `http://127.
 
 ## Known issues
 
-- **Unverified values in the interface.** The About page states a test AUC of 0.7615 and agreement between validation and test performance, and the dataset panel (`frontend/components/dataset-info.tsx`) states demographics, care settings, and a data split. None of these could be traced to the notebooks in this repository.
-- **Outdated model.** The backend serves the earlier BiLSTM, while the About page describes a CNN-LSTM.
+- **Unverified training details in the interface.** The About page describes label modification, a one-hour horizon, and an early-stopping patience of 5. These do not match the notebooks in this repository and could not be verified for the deployed model.
+- **Outdated model.** The backend serves the earlier BiLSTM. The About page identifies it as a prototype with no verified performance figures.
 - **No access control.** Prediction, report, and email endpoints require no authentication, and CORS allows all origins.
 - **Registration fails.** `/register` uses `dcrypt_context`, which is not defined, and the included database contains no tables.
 - **External data transfer.** `/reports/batch` is designed to send prediction details to a third-party API. Do not submit identifiable data.

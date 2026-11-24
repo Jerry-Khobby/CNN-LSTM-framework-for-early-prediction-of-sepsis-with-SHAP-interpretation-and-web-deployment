@@ -104,13 +104,12 @@ export default function AboutPage() {
                   </h2>
 
                   <p className="text-muted-foreground dark:text-gray-300">
-                    This project implements a CNN-LSTM hybrid model for early
-                    sepsis prediction using clinical data from the PhysioNet
-                    2019 Challenge. The model leverages convolutional layers to
-                    extract local temporal features and bidirectional LSTM
-                    layers to capture sequential dependencies. Using a 10-hour
-                    sliding window, the model predicts sepsis onset within the
-                    next hour and achieves an AUC of 0.7615 on the test set.
+                    This project studies early sepsis prediction using clinical
+                    data from the PhysioNet 2019 Challenge. This web application
+                    is a prototype that runs an earlier bidirectional LSTM model
+                    on a 10-hour window. It does not run the CNN-LSTM evaluated
+                    in the project notebooks; those results are documented in
+                    the project README and do not describe this application.
                   </p>
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
@@ -119,14 +118,14 @@ export default function AboutPage() {
                         Model Type
                       </span>
                       <span className="font-medium">
-                        CNN-LSTM Neural Network
+                        Bidirectional LSTM (earlier prototype)
                       </span>
                     </div>
                     <div className="flex flex-col gap-1.5">
                       <span className="text-sm font-medium text-muted-foreground">
-                        Performance (AUC)
+                        Status
                       </span>
-                      <span className="font-medium">0.76 (Test Set)</span>
+                      <span className="font-medium">Research prototype, not validated</span>
                     </div>
                     <div className="flex flex-col gap-1.5">
                       <span className="text-sm font-medium text-muted-foreground">
@@ -384,12 +383,10 @@ export default function AboutPage() {
               <Card className="p-6">
                 <h2 className="text-2xl font-bold mb-2">Model Architecture</h2>
                 <p className="text-muted-foreground dark:text-gray-300 max-w-3xl mb-6">
-                  Our hybrid model integrates convolutional and LSTM layers for
-                  time-series processing with a separate pathway for static
-                  features. This CNN-LSTM architecture enhances the model’s
-                  ability to capture both local patterns and long-term
-                  dependencies, improving performance in early sepsis
-                  prediction.
+                  The deployed prototype combines bidirectional LSTM layers for
+                  time-series processing with a separate dense pathway for
+                  static features. It contains no convolutional layers and is
+                  not the CNN-LSTM evaluated in the project notebooks.
                 </p>
 
                 <div className="mb-8">
@@ -407,10 +404,6 @@ export default function AboutPage() {
                         </h4>
                         <ul className="text-sm space-y-1 text-gray-600 dark:text-gray-400">
                           <li>• Input shape: (10, n_time_series_features)</li>
-                          <li>• Conv1D (64 filters, kernel size 3, ReLU)</li>
-                          <li>• MaxPooling1D</li>
-                          <li>• Conv1D (128 filters, kernel size 3, ReLU)</li>
-                          <li>• MaxPooling1D</li>
                           <li>
                             • Bidirectional LSTM (100 units,
                             return_sequences=True)
@@ -483,16 +476,16 @@ export default function AboutPage() {
                     <div className="mt-4 p-4 bg-teal-50 dark:bg-teal-900/20 rounded-lg">
                       <h4 className="font-medium flex items-center gap-2 text-teal-700 dark:text-teal-400">
                         <BarChart3 className="h-4 w-4" />
-                        Performance Metrics
+                        Performance
                       </h4>
                       <ul className="mt-2 space-y-1 text-sm text-gray-700 dark:text-gray-300">
-                        <li>• Test set AUC: 0.7615</li>
                         <li>
-                          • Validation performance matches test performance
+                          • No verified performance figures are available for
+                          the deployed prototype
                         </li>
                         <li>
-                          • ROC curves show consistent performance across
-                          datasets
+                          • Results for the notebook models are reported in the
+                          project README
                         </li>
                       </ul>
                     </div>

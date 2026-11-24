@@ -54,7 +54,7 @@ export function ModelArchitecture() {
     ctx.fillStyle = textColor
     ctx.font = "bold 14px Arial"
     ctx.textAlign = "center"
-    ctx.fillText("Hybrid Ensemble Architecture", width / 2, padding)
+    ctx.fillText("Deployed Prototype Architecture", width / 2, padding)
 
     // Input layer
     const inputY = padding + 50
@@ -63,26 +63,26 @@ export function ModelArchitecture() {
     // Draw arrows to feature extraction
     const featureY = inputY + boxHeight + arrowLength
     drawArrow(ctx, width / 2, inputY + boxHeight, width / 2, featureY, lineColor)
-    drawBox(ctx, width / 2 - boxWidth / 2, featureY, boxWidth, boxHeight, "Feature Extraction", colors.gray)
+    drawBox(ctx, width / 2 - boxWidth / 2, featureY, boxWidth, boxHeight, "Standardization", colors.gray)
 
     // Draw arrows to model components
     const modelY = featureY + boxHeight + arrowLength
     const xgbX = width / 3 - boxWidth / 2
     const lstmX = (2 * width) / 3 - boxWidth / 2
 
-    // Arrow to XGBoost
+    // Arrow to static pathway
     drawArrow(ctx, width / 2, featureY + boxHeight, xgbX + boxWidth / 2, modelY, lineColor)
-    drawBox(ctx, xgbX, modelY, boxWidth, boxHeight, "XGBoost", colors.teal)
+    drawBox(ctx, xgbX, modelY, boxWidth, boxHeight, "Dense (static)", colors.teal)
 
-    // Arrow to LSTM
+    // Arrow to BiLSTM pathway
     drawArrow(ctx, width / 2, featureY + boxHeight, lstmX + boxWidth / 2, modelY, lineColor)
-    drawBox(ctx, lstmX, modelY, boxWidth, boxHeight, "LSTM", colors.amber)
+    drawBox(ctx, lstmX, modelY, boxWidth, boxHeight, "BiLSTM (vitals)", colors.amber)
 
-    // Draw arrows to ensemble
+    // Draw arrows to merge layer
     const ensembleY = modelY + boxHeight + arrowLength
     drawArrow(ctx, xgbX + boxWidth / 2, modelY + boxHeight, width / 2, ensembleY, lineColor)
     drawArrow(ctx, lstmX + boxWidth / 2, modelY + boxHeight, width / 2, ensembleY, lineColor)
-    drawBox(ctx, width / 2 - boxWidth / 2, ensembleY, boxWidth, boxHeight, "Ensemble", colors.indigo)
+    drawBox(ctx, width / 2 - boxWidth / 2, ensembleY, boxWidth, boxHeight, "Add", colors.indigo)
 
     // Draw arrow to output
     const outputY = ensembleY + boxHeight + arrowLength
